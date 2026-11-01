@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Responsive image gallery with lightbox, filters, and keyboard navigation." />
+  <title>Image Gallery | CodeAlpha</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <header class="gallery-header">
+    <h1>Curated Gallery</h1>
+    <p>Explore our collection — click any image to open the lightbox.</p>
+
+    <nav class="filters" aria-label="Image category filters">
+      <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" type="button" data-filter="nature" aria-pressed="false">Nature</button>
+      <button class="filter-btn" type="button" data-filter="city" aria-pressed="false">City</button>
+      <button class="filter-btn" type="button" data-filter="abstract" aria-pressed="false">Abstract</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="gallery" id="gallery" aria-live="polite"></section>
+    <p class="gallery-count" id="galleryCount" aria-live="polite"></p>
+    <p class="download-status" id="downloadStatus" role="status" aria-live="polite"></p>
+    <p class="empty-state" id="emptyState" hidden>No images in this category.</p>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true"
+       aria-label="Image viewer" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+    <figure class="lightbox-content">
+      <img id="lightboxImg" src="" alt="" />
+      <figcaption id="lightboxCaption"></figcaption>
+      <button class="download-btn lightbox-download" id="lightboxDownload" type="button">Download</button>
+    </figure>
+    <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
